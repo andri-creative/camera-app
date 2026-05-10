@@ -1,2 +1,26 @@
-/* For information on how to create your own theme, please refer to:
-http://ionicframework.com/docs/theming/ */
+:root {
+  /** Warna Utama (Hijau Tua) **/
+  --ion-color-primary: #25671E;
+  --ion-color-primary-rgb: 37, 103, 30;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #215b1a;
+  --ion-color-primary-tint: #3b7635;
+
+  /** Warna Latar Belakang (Putih Tulang) **/
+  --ion-background-color: #F7F0F0;
+  --ion-background-color-rgb: 247, 240, 240;
+  --ion-text-color: #25671E;
+  --ion-text-color-rgb: 37, 103, 30;
+}
+
+body {
+  background-color: #F8F3E1 !important;
+}
+
+
+
+ion-toolbar {
+  --background: #25671E !important;
+  --color: #ffffff !important;
+}

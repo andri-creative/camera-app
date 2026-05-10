@@ -1,0 +1,83 @@
+html,
+body,
+ion-page,
+ion-router-outlet,
+.ion-page {
+  --background: var(--ion-color-primary) !important;
+  background: #f8f3e1 !important;
+  background-color: #f8f3e1 !important;
+}
+
+.custom-bg,
+ion-content {
+  --background: #f8f3e1 !important;
+  --ion-background-color: #f8f3e1 !important;
+  background: #f8f3e1 !important;
+}
+
+/* ion-header {
+    background: #25671E !important;
+} */
+
+ion-toolbar {
+  --background: #25671e !important;
+  --color: #ffffff !important;
+}
+
+.detail-button {
+  --background: #f2b50b !important;
+  --color: #000000 !important;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.bg-primary {
+  --background: var(--ion-color-primary) !important;
+}
+
+/* Desktop View Only (Mobile Container) */
+@media (min-width: 992px) {
+  html {
+    background-color: #e5e5e5 !important;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    background-color: #e5e5e5 !important;
+  }
+
+  ion-app {
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    height: 100%;
+  }
+}
+
+/* Custom Scrollbar (Rapi & Kecil) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(37, 103, 30, 0.3); /* Hijau transparan */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 103, 30, 0.6); /* Hijau lebih tegas saat hover */
+}
+
+/* Untuk Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(37, 103, 30, 0.3) transparent;
+}
