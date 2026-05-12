@@ -38,7 +38,7 @@ const Home: React.FC = () => {
   const lastFetchTime = useRef<number>(0);
   const lastFetchCoords = useRef<{ lat: number; lon: number } | null>(null);
   const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
-  const [facingMode, setFacingMode] = useState<"user" | "environment">("user");
+  const [facingMode, setFacingMode] = useState<"user" | "environment">("environment");
   const [locationAddress, setLocationAddress] = useState<string>("Locating...");
   const [coordinates, setCoordinates] = useState<string>("-");
   const [rawCoords, setRawCoords] = useState<{
@@ -102,12 +102,23 @@ const Home: React.FC = () => {
 
       try {
         const response = await fetch(
-          `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&addressdetails=1`,
+          `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}&addressdetails=1`,
+          {
+            headers: {
+              "Accept-Language": "id",
+              "User-Agent": "CameraGPSApp/1.0"
+            }
+          }
         );
         const data = await response.json();
 
-        if (data && data.display_name) {
-          setLocationAddress(data.display_name);
+        // Nominatim provides 'display_name' which is a full detailed address
+        const fullAddress = data.display_name || "Unknown Location";
+
+        console.log("Fetched Address (Nominatim):", fullAddress);
+
+        if (data) {
+          setLocationAddress(fullAddress);
           lastFetchTime.current = now;
           lastFetchCoords.current = { lat, lon };
         }
@@ -154,17 +165,7 @@ const Home: React.FC = () => {
 
   const startCamera = async () => {
     try {
-      // Check if current stream is already matching the facingMode
-      if (videoRef.current && videoRef.current.srcObject) {
-        const currentStream = videoRef.current.srcObject as MediaStream;
-        const videoTrack = currentStream.getVideoTracks()[0];
-        if (videoTrack && videoTrack.readyState === "live") {
-          // Stream is already active, no need to restart and cause flicker
-          return;
-        }
-      }
-
-      // Stop current tracks before starting new ones if they are dead or wrong
+      // Stop current tracks before starting new ones to ensure clean switch
       if (videoRef.current && videoRef.current.srcObject) {
         const stream = videoRef.current.srcObject as MediaStream;
         stream.getTracks().forEach((track) => track.stop());
@@ -442,7 +443,7 @@ const Home: React.FC = () => {
                   <img src="./favicon.svg" style={{ width: 22 }} alt="" />
                 </div>
               </IonCol>
-               <IonCol size="auto">
+              <IonCol size="auto">
                 <div
                   style={{
                     background: "#ffffff",
@@ -452,7 +453,7 @@ const Home: React.FC = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    cursor: "pointer"
+                    cursor: "pointer",
                   }}
                   onClick={() => history.push("/about")}
                 >
@@ -1017,7 +1018,7 @@ const Home: React.FC = () => {
             textAlign: "center",
             color: "#888",
             fontSize: "12px",
-            opacity: 0.8
+            opacity: 0.8,
           }}
         >
           <p style={{ margin: "2px 0" }}>© 2026 Team Andri Creative</p>

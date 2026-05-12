@@ -1,0 +1,30 @@
+###
+
+@late=-6.261351752281985
+@long=106.83433060188385
+# @key=bdc_202bbf7e734d4763aa5c693e5df68074
+
+###
+GET https://api-bdc.net/data/reverse-geocode-client?latitude={{late}}&longitude={{long}}&localityLanguage=id&key={{key}}
+
+###
+GET https://api.bigdatacloud.net/data/reverse-geocode-client?latitude={{late}}&longitude={{long}}&localityLanguage=id&key={{key}}
+
+
+####
+# @late=50.67902320667227
+# @long=4.569876996843732
+# @late2=50.66170571489684
+# @long2=4.578667041603012
+@key=d548c5ed24604be6a9dd0d989631f783
+@late2=-6.2608783344699965
+@long2=106.8295052561071
+
+GET https://api.geoapify.com/v1/routing?waypoints={{late}},{{long}}|{{late2}},{{long2}}&mode=drive&apiKey={{key}}
+
+
+
+
+####
+
+GET https://api.geoapify.com/v1/geocode/reverse?lat={{late}}&lon={{long}}&format=json&apiKey=d548c5ed24604be6a9dd0d989631f783
