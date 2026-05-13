@@ -78,7 +78,6 @@ const About: React.FC = () => {
           >
             Camera GPS PWA
           </h2>
-          <p style={{ color: "#ffffff", opacity: 0.8 }}>Version 1.0.0</p>
         </div>
 
         <IonCard
@@ -204,7 +203,7 @@ const About: React.FC = () => {
           }}
         >
           <p style={{ margin: "2px 0" }}>© 2026 Team Andri Creative</p>
-          <p style={{ margin: "2px 0" }}>Built with Ionic & React</p>
+          <p style={{ margin: "2px 0", fontSize: "10px", letterSpacing: "1px", textTransform: "uppercase" }}>Official Secure Application</p>
         </div>
       </IonContent>
     </IonPage>

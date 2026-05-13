@@ -1,0 +1,21 @@
+[debug] [2026-05-13T09:56:41.034Z] ----------------------------------------------------------------------
+[debug] [2026-05-13T09:56:41.036Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\prg01\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js logout
+[debug] [2026-05-13T09:56:41.036Z] CLI Version:   15.17.0
+[debug] [2026-05-13T09:56:41.036Z] Platform:      win32
+[debug] [2026-05-13T09:56:41.036Z] Node Version:  v24.15.0
+[debug] [2026-05-13T09:56:41.036Z] Time:          Wed May 13 2026 16:56:41 GMT+0700 (Western Indonesia Time)
+[debug] [2026-05-13T09:56:41.036Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-05-13T09:56:41.255Z] >>> [apiv2][query] GET https://accounts.google.com/o/oauth2/revoke token=1%2F%2F0gFg_SG45nqevCgYIARAAGBASNgF-L9Irbz3SYS0esXJ3YUvGbHhU3lLaJfZZeYIiXIzJFa1rb80v2T9rC83si_kkaYD4ri_IhA
+[debug] [2026-05-13T09:56:41.708Z] <<< [apiv2][status] GET https://accounts.google.com/o/oauth2/revoke 200
+[debug] [2026-05-13T09:56:41.709Z] <<< [apiv2][body] GET https://accounts.google.com/o/oauth2/revoke {}
+[info] +  Logged out from andri.dev.biz@gmail.com 
+[debug] [2026-05-13T09:56:43.526Z] Error: EBUSY: resource busy or locked, unlink 'E:\camera-app\firebase-debug.log'
+    at Object.unlinkSync (node:fs:1932:11)
+    at process.<anonymous> (C:\Users\prg01\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\cli.js:44:16)
+    at process.emit (node:events:509:28)
+    at process.exit (node:internal/process/per_thread:236:15)
+    at C:\Users\prg01\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:131:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[error] 
+[error] Error: An unexpected error has occurred.

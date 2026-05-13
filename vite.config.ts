@@ -7,19 +7,24 @@ import { VitePWA } from "vite-plugin-pwa";
 import terminal from "vite-plugin-terminal";
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   server: {
     host: true,
     allowedHosts: true,
   },
   plugins: [
-    terminal({
-      console: "terminal",
-    }),
+    command === "serve" &&
+      terminal({
+        console: "terminal",
+      }),
     react(),
     legacy(),
     VitePWA({
       registerType: "autoUpdate",
+      workbox: {
+        skipWaiting: true,
+        clientsClaim: true,
+      },
       manifest: {
         name: "Camera GPS",
         short_name: "CameraGPS",
@@ -47,10 +52,10 @@ export default defineConfig({
         ],
       },
     }),
-  ],
+  ].filter(Boolean) as any,
   test: {
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/setupTests.ts",
   },
-});
+}));

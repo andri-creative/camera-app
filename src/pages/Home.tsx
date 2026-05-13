@@ -411,9 +411,9 @@ const Home: React.FC = () => {
     }
 
     // StatusBar settings
-    StatusBar.setOverlaysWebView({ overlay: true }).catch(() => {});
-    StatusBar.setBackgroundColor({ color: "#25671E" }).catch(() => {});
-    StatusBar.setStyle({ style: Style.Dark }).catch(() => {});
+    StatusBar.setOverlaysWebView({ overlay: true }).catch(() => { });
+    StatusBar.setBackgroundColor({ color: "#25671E" }).catch(() => { });
+    StatusBar.setStyle({ style: Style.Dark }).catch(() => { });
   });
 
   return (
@@ -1022,7 +1022,7 @@ const Home: React.FC = () => {
           }}
         >
           <p style={{ margin: "2px 0" }}>© 2026 Team Andri Creative</p>
-          <p style={{ margin: "2px 0" }}>Built with Ionic & React</p>
+          <p style={{ margin: "2px 0", fontSize: "10px", letterSpacing: "1px", textTransform: "uppercase" }}>Official Secure Application</p>
         </div>
       </IonContent>
     </IonPage>
