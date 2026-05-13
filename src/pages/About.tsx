@@ -68,9 +68,10 @@ const About: React.FC = () => {
               boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
             }}
           >
-            <IonIcon
-              icon={cameraOutline}
-              style={{ fontSize: "45px", color: "#25671E" }}
+            <img 
+              src="/icons/web-app-manifest-192x192.png" 
+              alt="App Logo"
+              style={{ width: "60px", height: "60px", borderRadius: "12px" }} 
             />
           </div>
           <h2

@@ -440,7 +440,7 @@ const Home: React.FC = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <img src="./favicon.svg" style={{ width: 22 }} alt="" />
+                  <img src="/icons/favicon.svg" style={{ width: 22 }} alt="Logo" />
                 </div>
               </IonCol>
               <IonCol size="auto">
